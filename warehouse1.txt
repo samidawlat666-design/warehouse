@@ -1,0 +1,38 @@
+create database warehouse 
+go
+use warehouse;
+go
+
+create  table Date_dimension(
+day_number int  primary key,
+day_date datetime ,
+week_number int ,
+month_number  int  ,
+year_number int ,)
+ create table customer_dimension(
+  customer_id int primary key, 
+  customer_name nchar ,
+   customer_adress nchar ,
+   other_details nchar ,  )
+    create table  product_Dimension(
+	product_code int primary key ,
+	product_name  nchar ,
+	product_description  nchar ,
+	other_product_details nchar ,
+	)
+	create table geographic_dinmension( 
+	geographic_area nchar primary key,
+	geographic_area_name nchar,
+	country nchar  ,
+	other nchar,
+	)
+	 create table Data_warehouse_facts (
+	  customer_id int primary key ,
+	  day_number int ,
+	  geographic_area  nchar ,
+	  product_code int ,
+	  fact_name nchar ,
+	  fact_amount nchar ,
+	  fact_count nchar,
+	  other_fact_details nchar,
+	  )
